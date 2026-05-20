@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panduan Penggunaan | DFS & BFS Pathfinding Visualizer</title>
+
+    <link rel="icon" type="image/png" href="./asset/logo.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 18px 45px rgba(15, 23, 42, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="min-h-screen bg-slate-100 text-slate-800">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-lg"
+          >
+            <img
+              src="./asset/logo.png"
+              alt="Logo"
+              class="h-full w-full object-contain p-1"
+            />
+          </div>
+
+          <div>
+            <h1 class="text-lg font-bold text-slate-900 sm:text-xl">
+              Panduan Penggunaan
+            </h1>
+            <p class="hidden text-sm text-slate-500 sm:block">
+              Cara memakai DFS & BFS Pathfinding Visualizer
+            </p>
+          </div>
+        </div>
+
+        <a
+          href="./index.html"
+          class="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-slate-700"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+          <span class="hidden sm:inline">Kembali</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="mx-auto max-w-6xl px-4 py-6">
+      <!-- Hero -->
+      <section
+        class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8"
+      >
+        <div
+          class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+        >
+          <div>
+            <p
+              class="mb-2 inline-flex rounded-full bg-blue-50 px-3 py-1 text-sm font-bold text-blue-600"
+            >
+              DFS & BFS Pathfinding Visualizer
+            </p>
+
+            <h2
+              class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
+            >
+              Panduan Singkat Penggunaan Website
+            </h2>
+
+            <p
+              class="mt-3 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base"
+            >
+              Website ini digunakan untuk menampilkan proses pencarian jalur
+              dari titik awal menuju titik tujuan menggunakan algoritma Breadth
+              First Search dan Depth First Search.
+            </p>
+          </div>
+
+          <div class="rounded-3xl bg-slate-900 p-6 text-white">
+            <i class="fa-solid fa-route text-5xl"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Guide -->
+      <section class="mt-6 grid gap-4 md:grid-cols-2">
+        <div
+          class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft"
+        >
+          <h3
+            class="mb-3 flex items-center gap-2 text-lg font-bold text-slate-900"
+          >
+            <i class="fa-solid fa-play text-green-600"></i>
+            Cara Menjalankan Visualisasi
+          </h3>
+
+          <ol class="space-y-3 text-sm leading-6 text-slate-600">
+            <li><b>1.</b> Buka halaman utama website.</li>
+            <li>
+              <b>2.</b> Pilih algoritma yang ingin digunakan, yaitu BFS atau
+              DFS.
+            </li>
+            <li><b>3.</b> Pilih kecepatan animasi melalui menu Speed.</li>
+            <li><b>4.</b> Buat rintangan pada grid menggunakan mode Wall.</li>
+            <li><b>5.</b> Klik tombol Start untuk menjalankan visualisasi.</li>
+            <li><b>6.</b> Amati visited node dan path akhir yang terbentuk.</li>
+          </ol>
+        </div>
+
+        <div
+          class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft"
+        >
+          <h3
+            class="mb-3 flex items-center gap-2 text-lg font-bold text-slate-900"
+          >
+            <i class="fa-solid fa-computer-mouse text-blue-600"></i>
+            Mode Interaksi Grid
+          </h3>
+
+          <div class="space-y-3 text-sm leading-6 text-slate-600">
+            <p>
+              <b>Wall:</b> digunakan untuk membuat atau menghapus tembok pada
+              grid. Klik atau drag kotak untuk membuat banyak rintangan.
+            </p>
+
+            <p>
+              <b>Start:</b> digunakan untuk memindahkan titik awal pencarian.
+              Pilih mode Start, lalu klik kotak tujuan.
+            </p>
+
+            <p>
+              <b>End:</b> digunakan untuk memindahkan titik akhir pencarian.
+              Pilih mode End, lalu klik kotak tujuan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Button Guide -->
+      <section
+        class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft"
+      >
+        <h3 class="mb-4 text-lg font-bold text-slate-900">
+          Fungsi Tombol pada Website
+        </h3>
+
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="mb-2 text-slate-900">
+              <i class="fa-solid fa-play mr-2 text-green-600"></i>
+              <b>Start</b>
+            </div>
+            <p class="text-sm leading-6 text-slate-600">
+              Menjalankan algoritma yang dipilih untuk mencari jalur.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="mb-2 text-slate-900">
+              <i class="fa-solid fa-diagram-project mr-2 text-blue-600"></i>
+              <b>Algorithm</b>
+            </div>
+            <p class="text-sm leading-6 text-slate-600">
+              Memilih algoritma BFS atau DFS.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="mb-2 text-slate-900">
+              <i class="fa-solid fa-gauge-high mr-2 text-purple-600"></i>
+              <b>Speed</b>
+            </div>
+            <p class="text-sm leading-6 text-slate-600">
+              Mengatur kecepatan animasi visualisasi.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="mb-2 text-slate-900">
+              <i class="fa-solid fa-wand-magic-sparkles mr-2 text-blue-600"></i>
+              <b>Generate Maze</b>
+            </div>
+            <p class="text-sm leading-6 text-slate-600">
+              Membuat maze atau rintangan otomatis.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="mb-2 text-slate-900">
+              <i class="fa-solid fa-eraser mr-2 text-slate-600"></i>
+              <b>Clear Path</b>
+            </div>
+            <p class="text-sm leading-6 text-slate-600">
+              Menghapus hasil pencarian tanpa menghapus wall.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="mb-2 text-slate-900">
+              <i class="fa-solid fa-trash mr-2 text-red-600"></i>
+              <b>Clear Board</b>
+            </div>
+            <p class="text-sm leading-6 text-slate-600">
+              Menghapus seluruh wall dan mengembalikan board seperti awal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Algorithm Explanation -->
+      <section class="mt-6 grid gap-4 lg:grid-cols-2">
+        <div
+          class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft"
+        >
+          <h3
+            class="mb-3 flex items-center gap-2 text-lg font-bold text-slate-900"
+          >
+            <i class="fa-solid fa-layer-group text-blue-600"></i>
+            Breadth First Search
+          </h3>
+
+          <p class="text-sm leading-7 text-slate-600">
+            BFS mencari jalur dengan cara melebar dari titik awal. Algoritma ini
+            memeriksa node yang paling dekat terlebih dahulu, kemudian lanjut ke
+            node berikutnya. BFS cocok digunakan untuk mencari jalur terpendek
+            pada grid tanpa bobot.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft"
+        >
+          <h3
+            class="mb-3 flex items-center gap-2 text-lg font-bold text-slate-900"
+          >
+            <i class="fa-solid fa-code-branch text-purple-600"></i>
+            Depth First Search
+          </h3>
+
+          <p class="text-sm leading-7 text-slate-600">
+            DFS mencari jalur dengan cara masuk sedalam mungkin pada satu arah.
+            Jika menemukan jalan buntu, algoritma akan kembali dan mencoba jalur
+            lain. DFS dapat menemukan jalur, tetapi belum tentu menghasilkan
+            jalur terpendek.
+          </p>
+        </div>
+      </section>
+
+      <!-- Legend -->
+      <section
+        class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft"
+      >
+        <h3 class="mb-4 text-lg font-bold text-slate-900">
+          Keterangan Warna pada Grid
+        </h3>
+
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="flex items-center gap-3 rounded-2xl border border-slate-200 p-4"
+          >
+            <span class="h-6 w-6 rounded bg-green-600"></span>
+            <p class="text-sm font-semibold text-slate-700">Start Node</p>
+          </div>
+
+          <div
+            class="flex items-center gap-3 rounded-2xl border border-slate-200 p-4"
+          >
+            <span class="h-6 w-6 rounded bg-red-600"></span>
+            <p class="text-sm font-semibold text-slate-700">End Node</p>
+          </div>
+
+          <div
+            class="flex items-center gap-3 rounded-2xl border border-slate-200 p-4"
+          >
+            <span
+              class="h-6 w-6 rounded border border-blue-200 bg-white"
+            ></span>
+            <p class="text-sm font-semibold text-slate-700">Unvisited Node</p>
+          </div>
+
+          <div
+            class="flex items-center gap-3 rounded-2xl border border-slate-200 p-4"
+          >
+            <span
+              class="h-6 w-6 rounded bg-gradient-to-br from-sky-400 to-purple-500"
+            ></span>
+            <p class="text-sm font-semibold text-slate-700">Visited Node</p>
+          </div>
+
+          <div
+            class="flex items-center gap-3 rounded-2xl border border-slate-200 p-4"
+          >
+            <span class="h-6 w-6 rounded bg-yellow-400"></span>
+            <p class="text-sm font-semibold text-slate-700">Path Akhir</p>
+          </div>
+
+          <div
+            class="flex items-center gap-3 rounded-2xl border border-slate-200 p-4"
+          >
+            <span class="h-6 w-6 rounded bg-slate-900"></span>
+            <p class="text-sm font-semibold text-slate-700">Wall Node</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back CTA -->
+      <section
+        class="mt-6 rounded-3xl bg-slate-900 p-6 text-center text-white shadow-soft"
+      >
+        <h3 class="text-xl font-bold">Siap mencoba visualisasi?</h3>
+        <p class="mt-2 text-sm text-slate-300">
+          Kembali ke halaman utama untuk menjalankan BFS dan DFS.
+        </p>
+
+        <a
+          href="./index.html"
+          class="mt-4 inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-slate-100"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+          Kembali ke Visualizer
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
