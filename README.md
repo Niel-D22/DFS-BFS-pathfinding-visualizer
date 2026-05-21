@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./asset/Logo.png" alt="PathFinder Maze Visualizer" width="250" />
+  <img src="./asset/Logo.png" alt="PathFinder Maze Visualizer" width="150" />
 </p>
 
 <h1 align="center">PathFinder Maze Visualizer</h1>
